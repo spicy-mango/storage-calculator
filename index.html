@@ -10,9 +10,65 @@
       img[alt="GW Security Logo"] {
         content: url('./assets/gwlogo-BDvMTnxg.png');
       }
+      
+      /* Character tooltip styling */
+      .character-container {
+        position: absolute;
+        right: 30px;
+        top: 280px;
+        width: 150px;
+        z-index: 100;
+      }
+      
+      .character-image {
+        width: 100%;
+        cursor: pointer;
+      }
+      
+      .tooltip {
+        visibility: hidden;
+        position: absolute;
+        left: -200px;
+        width: 250px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 200;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      
+      .character-container:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+      
+      .tooltip-title {
+        font-weight: bold;
+        color: #0077cc;
+        margin-bottom: 8px;
+      }
+      
+      .tooltip-text {
+        font-size: 14px;
+        line-height: 1.4;
+      }
     </style>
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- Character with tooltip -->
+    <div class="character-container">
+      <img src="./assets/gw-character.png" alt="GW Security Character" class="character-image">
+      <div class="tooltip">
+        <div class="tooltip-title">Need help calculating your storage?</div>
+        <div class="tooltip-text">
+          This calculator helps you determine the right amount of storage for your security camera system. Adjust the number of cameras, resolution, and recording settings to get an accurate estimate for your specific needs.
+        </div>
+      </div>
+    </div>
   </body>
 </html>
